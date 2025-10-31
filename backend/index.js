@@ -56,7 +56,7 @@ const PORT = process.env.port || 5000;
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.oveofxm.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+    `mongodb+srv://joykumar:Googletest@cluster0.oveofxm.mongodb.net/ChatApp?retryWrites=true&w=majority`
   )
   .then(() => {
     console.log("connected");
