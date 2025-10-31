@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 const path = require("path");
+const fs = require("fs");
 
 const authRoutes = require("./routes/auth-routes");
 const messagesRoutes = require("./routes/messages-routes");
@@ -55,7 +56,7 @@ const PORT = process.env.port || 5000;
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster1.sxidkwv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.oveofxm.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
   .then(() => {
     console.log("connected");
