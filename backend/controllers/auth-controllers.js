@@ -54,12 +54,13 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
+  const { path: filePath } = req.file;
   const createdUser = new User({
     fullName,
     email,
     username,
     password: hashedPassword,
-    profileImage: req.file.path,
+    profileImage: filePath,
   });
 
   try {

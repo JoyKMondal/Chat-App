@@ -25,6 +25,8 @@ const Navbar = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
+  console.log(auth, "auth");
+
   return (
     <div className="navbar bg-base-100 md:px-20 rounded border border-gray-50 dark:border-gray-700">
       <div className="navbar-start">
@@ -69,9 +71,7 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src={`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/${
-                    auth.loggedInUser?.profileImage
-                  }`}
+                  src={`${auth.loggedInUser?.profileImage}`}
                 />
               </div>
             </div>

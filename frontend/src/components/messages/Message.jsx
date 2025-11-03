@@ -33,9 +33,7 @@ const Message = ({ message }) => {
         <div className="w-10 rounded-full">
           <img
             alt="Tailwind CSS chat bubble component"
-            src={`${
-              import.meta.env.VITE_REACT_APP_BACKEND_URL
-            }/${profileImage}`}
+            src={`${profileImage}`}
           />
         </div>
       </div>

@@ -102,9 +102,7 @@ const UpdateProfile = () => {
               <div className="w-32 rounded-lg">
                 <img
                   alt="Tailwind CSS chat bubble component"
-                  src={`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/${
-                    updateUser.profileImage
-                  }`}
+                  src={`${updateUser.profileImage}`}
                 />
               </div>
             </div>

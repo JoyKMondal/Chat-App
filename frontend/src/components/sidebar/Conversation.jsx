@@ -22,12 +22,7 @@ const Conversation = ({ user, lastIndex }) => {
       >
         <div className={`avatar ${isActive ? "online" : ""}`}>
           <div className="w-16 rounded-full">
-            <img
-              src={`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/${
-                user.profileImage
-              }`}
-              alt="user avatar"
-            />
+            <img src={`${user.profileImage}`} alt="user avatar" />
           </div>
         </div>
 

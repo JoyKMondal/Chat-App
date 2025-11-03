@@ -21,9 +21,7 @@ const MessageContainer = () => {
   }, [setCurrentConversation]);
 
   return (
-    <div
-      className="md:w-2/3 mx-6 border border-gray-200 dark:border-gray-700 flex flex-col sm:h-[450px] md:h-[550px] widescreen:section-min-height tallscreen:section-min-height"
-    >
+    <div className="md:w-2/3 mx-6 border border-gray-200 dark:border-gray-700 flex flex-col sm:h-[450px] md:h-[550px] widescreen:section-min-height tallscreen:section-min-height">
       {!currentConversation ? (
         <NoChatSelected user={auth.loggedInUser} />
       ) : (
@@ -37,9 +35,7 @@ const MessageContainer = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS chat bubble component"
-                  src={`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/${
-                    currentConversation.profileImage
-                  }`}
+                  src={`${currentConversation.profileImage}`}
                 />
               </div>
             </div>
