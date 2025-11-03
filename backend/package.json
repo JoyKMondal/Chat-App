@@ -23,6 +23,7 @@
     "nodemailer": "^6.9.14",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "socket.io": "^4.7.5",
+    "streamifier": "^0.1.1",
     "uuid": "^10.0.0"
   },
   "devDependencies": {

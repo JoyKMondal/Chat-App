@@ -31,7 +31,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/api/users", usersRoutes);
 
-// app.use("/uploads/images", express.static(path.join("uploads", "images")));
+if (process.env.NODE_ENV !== 'production') {
+  app.use('/uploads/images', express.static(path.join(__dirname, 'uploads', 'images')));
+}
 
 // app.use((req, res, next) => {
 //   const error = new HttpError("Could not find this route.", 404);

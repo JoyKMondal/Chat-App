@@ -54,13 +54,31 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
-  const { path: filePath } = req.file;
+  let imageUrl;
+  if (req.file) {
+    if (process.env.NODE_ENV === "production") {
+      // Prod: Upload from memory buffer
+      const { uploadToCloudinary } = require("../middleware/file-upload");
+      try {
+        imageUrl = await uploadToCloudinary(req.file.buffer, req.file.mimetype);
+        console.log("Signup: Cloudinary URL:", imageUrl);
+      } catch (err) {
+        return next(new HttpError("Image upload failed", 500));
+      }
+    } else {
+      // Dev: Use local path
+      imageUrl = req.file.path;
+    }
+  } else {
+    return next(new HttpError("No image provided", 422));
+  }
+
   const createdUser = new User({
     fullName,
     email,
     username,
     password: hashedPassword,
-    profileImage: filePath,
+    profileImage: imageUrl,
   });
 
   try {
